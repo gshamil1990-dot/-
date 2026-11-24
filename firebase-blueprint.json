@@ -1,0 +1,300 @@
+{
+  "entities": {
+    "ColoringModel": {
+      "title": "ColoringModel",
+      "description": "Approved model showcase photograph for one of the 26 coloring techniques.",
+      "type": "object",
+      "properties": {
+        "techniqueId": {
+          "type": "string",
+          "description": "Catalog identifier matching one of the 26 coloring techniques.",
+          "minLength": 2,
+          "maxLength": 64,
+          "pattern": "^[a-z0-9\\-]+$"
+        },
+        "imageDataUrl": {
+          "type": "string",
+          "description": "Compressed JPEG data URL for the approved model photograph.",
+          "minLength": 32,
+          "maxLength": 450000,
+          "pattern": "^data:image/(jpeg|jpg|png|webp);base64,[A-Za-z0-9+/=]+$"
+        },
+        "promptUsed": {
+          "type": "string",
+          "description": "Prompt notes or upload label describing the look.",
+          "minLength": 1,
+          "maxLength": 800
+        },
+        "source": {
+          "type": "string",
+          "description": "Origin of the model photograph.",
+          "enum": ["ai", "upload"]
+        },
+        "isPublished": {
+          "type": "boolean",
+          "description": "Whether this model photo is publicly visible in the catalog."
+        },
+        "approvedBy": {
+          "type": "string",
+          "description": "Firebase Auth UID of the master stylist who approved the photo.",
+          "minLength": 4,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the document was first published."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest photo approval."
+        }
+      },
+      "required": [
+        "techniqueId",
+        "imageDataUrl",
+        "promptUsed",
+        "source",
+        "isPublished",
+        "approvedBy",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "HaircutModel": {
+      "title": "HaircutModel",
+      "description": "Approved model showcase photograph for one of the 20 haircut forms.",
+      "type": "object",
+      "properties": {
+        "haircutId": {
+          "type": "string",
+          "description": "Catalog identifier matching one of the 20 haircut services.",
+          "minLength": 2,
+          "maxLength": 64,
+          "pattern": "^[a-z0-9\\-]+$"
+        },
+        "imageDataUrl": {
+          "type": "string",
+          "description": "Compressed JPEG data URL for the approved haircut photograph.",
+          "minLength": 32,
+          "maxLength": 450000,
+          "pattern": "^data:image/(jpeg|jpg|png|webp);base64,[A-Za-z0-9+/=]+$"
+        },
+        "promptUsed": {
+          "type": "string",
+          "description": "Prompt notes or upload label describing the haircut look.",
+          "minLength": 1,
+          "maxLength": 800
+        },
+        "source": {
+          "type": "string",
+          "description": "Origin of the model photograph.",
+          "enum": ["ai", "upload"]
+        },
+        "isPublished": {
+          "type": "boolean",
+          "description": "Whether this haircut photo is publicly visible in the catalog."
+        },
+        "approvedBy": {
+          "type": "string",
+          "description": "Firebase Auth UID of the master stylist who approved the photo.",
+          "minLength": 4,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the document was first published."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest photo approval."
+        }
+      },
+      "required": [
+        "haircutId",
+        "imageDataUrl",
+        "promptUsed",
+        "source",
+        "isPublished",
+        "approvedBy",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "CareModel": {
+      "title": "CareModel",
+      "description": "Approved showcase photograph for one of the 12 spa haircare treatments.",
+      "type": "object",
+      "properties": {
+        "careId": {
+          "type": "string",
+          "description": "Catalog identifier matching one of the 12 spa care rituals.",
+          "minLength": 2,
+          "maxLength": 64,
+          "pattern": "^[a-z0-9\\-]+$"
+        },
+        "imageDataUrl": {
+          "type": "string",
+          "description": "Compressed JPEG data URL for the approved spa care photograph.",
+          "minLength": 32,
+          "maxLength": 450000,
+          "pattern": "^data:image/(jpeg|jpg|png|webp);base64,[A-Za-z0-9+/=]+$"
+        },
+        "promptUsed": {
+          "type": "string",
+          "description": "Prompt notes or upload label describing the spa treatment showcase.",
+          "minLength": 1,
+          "maxLength": 800
+        },
+        "source": {
+          "type": "string",
+          "description": "Origin of the photograph.",
+          "enum": ["ai", "upload"]
+        },
+        "isPublished": {
+          "type": "boolean",
+          "description": "Whether this spa care photo is publicly visible in the catalog."
+        },
+        "approvedBy": {
+          "type": "string",
+          "description": "Firebase Auth UID of the master stylist who approved the photo.",
+          "minLength": 4,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the document was first published."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest photo approval."
+        }
+      },
+      "required": [
+        "careId",
+        "imageDataUrl",
+        "promptUsed",
+        "source",
+        "isPublished",
+        "approvedBy",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "StylingModel": {
+      "title": "StylingModel",
+      "description": "Approved showcase photograph for one of the 25 salon hairstyles and styling looks.",
+      "type": "object",
+      "properties": {
+        "stylingId": {
+          "type": "string",
+          "description": "Catalog identifier matching one of the 25 styling services.",
+          "minLength": 2,
+          "maxLength": 64,
+          "pattern": "^[a-z0-9\\-]+$"
+        },
+        "imageDataUrl": {
+          "type": "string",
+          "description": "Compressed JPEG data URL for the approved styling photograph.",
+          "minLength": 32,
+          "maxLength": 450000,
+          "pattern": "^data:image/(jpeg|jpg|png|webp);base64,[A-Za-z0-9+/=]+$"
+        },
+        "promptUsed": {
+          "type": "string",
+          "description": "Prompt notes or upload label describing the styling look.",
+          "minLength": 1,
+          "maxLength": 800
+        },
+        "source": {
+          "type": "string",
+          "description": "Origin of the photograph.",
+          "enum": ["ai", "upload"]
+        },
+        "isPublished": {
+          "type": "boolean",
+          "description": "Whether this styling photo is publicly visible in the catalog."
+        },
+        "approvedBy": {
+          "type": "string",
+          "description": "Firebase Auth UID of the master stylist who approved the photo.",
+          "minLength": 4,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the document was first published."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest photo approval."
+        }
+      },
+      "required": [
+        "stylingId",
+        "imageDataUrl",
+        "promptUsed",
+        "source",
+        "isPublished",
+        "approvedBy",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AdminMember": {
+      "title": "AdminMember",
+      "description": "Authorized master stylist account allowed to publish model photos.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["master"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "role", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/coloring_models/{techniqueId}": {
+      "schema": { "$ref": "#/entities/ColoringModel" },
+      "description": "Publicly readable approved model photos for coloring techniques; writable only by verified master admins."
+    },
+    "/haircut_models/{haircutId}": {
+      "schema": { "$ref": "#/entities/HaircutModel" },
+      "description": "Publicly readable approved model photos for haircut forms; writable only by verified master admins."
+    },
+    "/care_models/{careId}": {
+      "schema": { "$ref": "#/entities/CareModel" },
+      "description": "Publicly readable approved showcase photos for spa haircare treatments; writable only by verified master admins."
+    },
+    "/styling_models/{stylingId}": {
+      "schema": { "$ref": "#/entities/StylingModel" },
+      "description": "Publicly readable approved showcase photos for salon hairstyles and styling looks; writable only by verified master admins."
+    },
+    "/admins/{adminId}": {
+      "schema": { "$ref": "#/entities/AdminMember" },
+      "description": "Registry of authorized master stylist UIDs."
+    }
+  }
+}
